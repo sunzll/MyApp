@@ -9,6 +9,7 @@
         <element id="directory" name="lib">
           <element id="library" level="module" name="JUnit4" module-name="MyApp" />
           <element id="library" level="project" name="ssm" />
+          <element id="library" level="project" name="jackson" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="MyApp/web/Web" />
