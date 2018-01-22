@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="emp">
+    <resultMap id="emp" type="entity.Emp">
+        <id column="id" property="id"></id>
+        <result column="hire_date" property="hireDate" javaType="Date"></result>
+        <association property="dept" column="dept_id" javaType="entity.Dept"
+                     select="dept.getById"></association>
+    </resultMap>
+
+
+    <select id="getAllEmps" resultMap="emp">
+        select * from emp
+    </select>
+
+    <insert id="addOneEmp" parameterType="entity.Emp">
+        insert into emp values(#{id},#{name},#{sex},#{hireDate},#{salay},#{dept.id})
+    </insert>
+
+    <select id="getByCond" parameterType="cn.jd.util.Cond" resultMap="emp">
+        select * from emp
+        /*模糊查询*/
+        <where>
+            <if test="empName!=''">
+                and emp.name like '%${empName}%'
+            </if>
+            <if test="deptId!=0">
+                and emp.dept_id = #{deptId}
+            </if>
+        </where>
+        limit #{start},#{limit}
+    </select>
+
+    <select id="getCount" resultType="int" parameterType="cn.jd.util.Cond">
+        select count(*) from emp
+        <where>
+            <if test="empName!=''">
+                and emp.name like '%${empName}%'
+            </if>
+            <if test="deptId!=0">
+                and emp.dept_id = #{deptId}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteById" parameterType="int">
+        delete from emp where id=#{id}
+    </delete>
+
+    <update id="updateById" parameterType="entity.Emp">
+        update emp set name=#{name},sex=#{sex},hire_date=#{hireDate},salay=#{salay},dept_id=#{dept.id} where id=#{id}
+    </update>
+
+</mapper>

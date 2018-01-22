@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.jd.user">
+
+    <resultMap id="userMap" type="entity.User">
+        <id column="id" property="id"></id>
+        <result column="user_name" property="userName"></result>
+    </resultMap>
+
+    <select id="all" resultMap="userMap">
+        select * from user
+    </select>
+
+    <select id="selectByNamePwd" resultMap="userMap" parameterType="entity.User">
+        select * from user where user_name= #{userName} and password= #{password}
+    </select>
+</mapper>

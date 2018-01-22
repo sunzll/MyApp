@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dept">
+
+    <resultMap id="deptAndEmp" type="entity.Dept">
+        <id column="dept_id" property="id"></id>
+        <result column="dept_name" property="name"></result>
+        <result column="address" property="address"></result>
+        <collection property="empList" ofType="entity.Emp">
+            <id column="emp_id" property="id"></id>
+            <result column="emp_name" property="name"></result>
+            <result column="sex" property="sex"></result>
+            <result column="hire_date" property="hireDate"></result>
+            <result column="salay" property="salay"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getAllDeptAndEmp" resultMap="deptAndEmp">
+        select t1.id as dept_id,t1.name as dept_name,address,
+        t2.id as emp_id,t2.name as emp_name,sex,hire_date,salay
+        from dept t1
+        left join emp t2 on t1.id = t2.dept_id
+    </select>
+
+    <select id="getAllDepts" resultType="entity.Dept">
+        select * from dept
+    </select>
+
+    <select id="getById" resultType="entity.Dept" parameterType="int">
+        select * from dept where id=#{id}
+    </select>
+
+    <select id="getIdByName" parameterType="string" resultType="int">
+        select id from dept where name=#{name}
+    </select>
+
+    <select id="getNextId" resultType="int">
+        SELECT auto_increment FROM information_schema.TABLES where TABLE_SCHEMA='myapp' and TABLE_NAME='dept'
+    </select>
+
+    <insert id="addDept" parameterType="entity.Dept">
+        insert into dept values(#{id},#{name},#{address})
+    </insert>
+
+    <update id="updateById" parameterType="entity.Dept">
+        update dept set name=#{name},address=#{address} where id=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        delete from dept where id=#{id}
+    </delete>
+
+    <select id="getByCond" parameterType="cn.jd.util.Cond" resultMap="deptAndEmp">
+        select t1.id as dept_id,t1.name as dept_name,address,
+        t2.id as emp_id,t2.name as emp_name,sex,hire_date,salay from (select * from dept t1 order by id limit #{start},#{limit}) t1
+        left join emp t2 on t1.id = t2.dept_id
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(*) from dept
+    </select>
+
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 打印SQL语句 -->
+        <setting name="logImpl" value="LOG4J" />
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql:///myapp" />
+                <property name="username" value="root" />
+                <property name="password" value="root" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="cn/jd/service/entity/mapper/UserMapper.xml" />
+        <mapper resource="cn/jd/service/entity/mapper/ProvinceMapper.xml" />
+        <mapper resource="cn/jd/service/entity/mapper/CityMapper.xml" />
+        <mapper resource="cn/jd/service/entity/mapper/AreaMapper.xml" />
+        <mapper resource="cn/jd/service/entity/mapper/EmpMapper.xml" />
+        <mapper resource="cn/jd/service/entity/mapper/DeptMapper.xml" />
+    </mappers>
+</configuration>
