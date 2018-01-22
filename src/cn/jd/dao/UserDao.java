@@ -1,6 +1,6 @@
 package cn.jd.dao;
 
-import entity.User;
+import cn.jd.entity.User;
 
 public interface UserDao {
 

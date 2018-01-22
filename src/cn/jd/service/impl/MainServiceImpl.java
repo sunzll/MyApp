@@ -4,10 +4,10 @@ import cn.jd.dao.DeptDao;
 import cn.jd.dao.EmpDao;
 import cn.jd.dao.TreeMenuDao;
 import cn.jd.service.MainService;
-import entity.City;
-import entity.Dept;
-import entity.Emp;
-import entity.Province;
+import cn.jd.entity.City;
+import cn.jd.entity.Dept;
+import cn.jd.entity.Emp;
+import cn.jd.entity.Province;
 import cn.jd.util.Cond;
 import org.springframework.stereotype.Service;
 

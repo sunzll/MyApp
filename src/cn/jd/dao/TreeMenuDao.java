@@ -1,7 +1,7 @@
 package cn.jd.dao;
 
-import entity.City;
-import entity.Province;
+import cn.jd.entity.City;
+import cn.jd.entity.Province;
 
 import java.util.List;
 

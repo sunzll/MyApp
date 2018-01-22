@@ -4,10 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="emp">
-    <resultMap id="emp" type="entity.Emp">
+    <resultMap id="emp" type="cn.jd.entity.Emp">
         <id column="id" property="id"></id>
         <result column="hire_date" property="hireDate" javaType="Date"></result>
-        <association property="dept" column="dept_id" javaType="entity.Dept"
+        <association property="dept" column="dept_id" javaType="cn.jd.entity.Dept"
                      select="dept.getById"></association>
     </resultMap>
 
@@ -16,7 +16,7 @@
         select * from emp
     </select>
 
-    <insert id="addOneEmp" parameterType="entity.Emp">
+    <insert id="addOneEmp" parameterType="cn.jd.entity.Emp">
         insert into emp values(#{id},#{name},#{sex},#{hireDate},#{salay},#{dept.id})
     </insert>
 
@@ -50,7 +50,7 @@
         delete from emp where id=#{id}
     </delete>
 
-    <update id="updateById" parameterType="entity.Emp">
+    <update id="updateById" parameterType="cn.jd.entity.Emp">
         update emp set name=#{name},sex=#{sex},hire_date=#{hireDate},salay=#{salay},dept_id=#{dept.id} where id=#{id}
     </update>
 

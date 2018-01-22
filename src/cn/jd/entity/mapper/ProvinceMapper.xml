@@ -6,11 +6,11 @@
 <mapper namespace="province">
 
     <!--查询省及该省所有城市信息   一对多-->
-    <resultMap id="ProAndCity" type="entity.Province">
+    <resultMap id="ProAndCity" type="cn.jd.entity.Province">
         <id column="p_id" property="id"></id>
         <result column="provinceid" property="provinceId"></result>
         <result column="province" property="province"></result>
-        <collection property="cities" ofType="entity.City">
+        <collection property="cities" ofType="cn.jd.entity.City">
             <id column="c_id" property="id"></id>
             <result column="city" property="city"></result>
             <result column="cityid" property="cityId"></result>
@@ -18,15 +18,15 @@
     </resultMap>
 
     <!--省  市  区   -->
-    <resultMap id="ProAndCityAndArea" type="entity.Province">
+    <resultMap id="ProAndCityAndArea" type="cn.jd.entity.Province">
         <id column="p_id" property="id"></id>
         <result column="provinceid" property="provinceId"></result>
         <result column="province" property="province"></result>
-        <collection property="cities" ofType="entity.City">
+        <collection property="cities" ofType="cn.jd.entity.City">
             <id column="c_id" property="id"></id>
             <result column="city" property="city"></result>
             <result column="cityid" property="cityId"></result>
-            <collection property="areas" ofType="entity.Area">
+            <collection property="areas" ofType="cn.jd.entity.Area">
                 <id column="a_id" property="id"></id>
                 <result column="areaid" property="areaId"></result>
                 <result column="area" property="area"></result>
@@ -43,7 +43,7 @@
       left join areas t3 on t2.cityid=t3.cityid
     </select>
 
-    <select id="getAllProvince" resultType="entity.Province">
+    <select id="getAllProvince" resultType="cn.jd.entity.Province">
         select * from provinces
     </select>
 
@@ -56,11 +56,11 @@
     </select>
 
 
-    <select id="getProById" resultType="entity.Province">
+    <select id="getProById" resultType="cn.jd.entity.Province">
         select * from provinces where id=#{id}
     </select>
 
-    <select id="getProByPid" resultType="entity.Province" parameterType="int">
+    <select id="getProByPid" resultType="cn.jd.entity.Province" parameterType="int">
          select * from provinces where provinceId=#{pid}
     </select>
 </mapper>

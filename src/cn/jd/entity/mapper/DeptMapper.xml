@@ -5,11 +5,11 @@
 
 <mapper namespace="dept">
 
-    <resultMap id="deptAndEmp" type="entity.Dept">
+    <resultMap id="deptAndEmp" type="cn.jd.entity.Dept">
         <id column="dept_id" property="id"></id>
         <result column="dept_name" property="name"></result>
         <result column="address" property="address"></result>
-        <collection property="empList" ofType="entity.Emp">
+        <collection property="empList" ofType="cn.jd.entity.Emp">
             <id column="emp_id" property="id"></id>
             <result column="emp_name" property="name"></result>
             <result column="sex" property="sex"></result>
@@ -25,11 +25,11 @@
         left join emp t2 on t1.id = t2.dept_id
     </select>
 
-    <select id="getAllDepts" resultType="entity.Dept">
+    <select id="getAllDepts" resultType="cn.jd.entity.Dept">
         select * from dept
     </select>
 
-    <select id="getById" resultType="entity.Dept" parameterType="int">
+    <select id="getById" resultType="cn.jd.entity.Dept" parameterType="int">
         select * from dept where id=#{id}
     </select>
 
@@ -41,11 +41,11 @@
         SELECT auto_increment FROM information_schema.TABLES where TABLE_SCHEMA='myapp' and TABLE_NAME='dept'
     </select>
 
-    <insert id="addDept" parameterType="entity.Dept">
+    <insert id="addDept" parameterType="cn.jd.entity.Dept">
         insert into dept values(#{id},#{name},#{address})
     </insert>
 
-    <update id="updateById" parameterType="entity.Dept">
+    <update id="updateById" parameterType="cn.jd.entity.Dept">
         update dept set name=#{name},address=#{address} where id=#{id}
     </update>
 

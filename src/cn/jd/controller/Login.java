@@ -1,7 +1,7 @@
 package cn.jd.controller;
 
 import cn.jd.service.UserService;
-import entity.User;
+import cn.jd.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

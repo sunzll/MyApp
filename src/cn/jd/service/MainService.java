@@ -1,9 +1,9 @@
 package cn.jd.service;
 
-import entity.City;
-import entity.Dept;
-import entity.Emp;
-import entity.Province;
+import cn.jd.entity.City;
+import cn.jd.entity.Dept;
+import cn.jd.entity.Emp;
+import cn.jd.entity.Province;
 import cn.jd.util.Cond;
 
 import java.util.List;

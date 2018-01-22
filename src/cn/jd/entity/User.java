@@ -1,4 +1,4 @@
-package entity;
+package cn.jd.entity;
 
 public class User {
     private int id;

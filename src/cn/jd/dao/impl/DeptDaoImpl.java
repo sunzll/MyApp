@@ -1,8 +1,8 @@
 package cn.jd.dao.impl;
 
 import cn.jd.dao.DeptDao;
-import entity.Dept;
-import entity.Emp;
+import cn.jd.entity.Dept;
+import cn.jd.entity.Emp;
 import cn.jd.util.Cond;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;

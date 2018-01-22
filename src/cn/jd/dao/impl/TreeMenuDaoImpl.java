@@ -1,8 +1,8 @@
 package cn.jd.dao.impl;
 
 import cn.jd.dao.TreeMenuDao;
-import entity.City;
-import entity.Province;
+import cn.jd.entity.City;
+import cn.jd.entity.Province;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
 

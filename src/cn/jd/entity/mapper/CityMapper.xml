@@ -6,24 +6,24 @@
 <mapper namespace="city">
 
     <!--查询城市及所在省的信息  多对一-->
-    <resultMap id="cityAndPro" type="entity.City">
-        <association property="province" column="provinceId" javaType="entity.Province"
+    <resultMap id="cityAndPro" type="cn.jd.entity.City">
+        <association property="province" column="provinceId" javaType="cn.jd.entity.Province"
                      select="province.getProByPid"></association>
     </resultMap>
 
     <!--查询城市及包括的地区信息-->
-    <resultMap id="cityAndArea" type="entity.City">
+    <resultMap id="cityAndArea" type="cn.jd.entity.City">
         <id column="c_id" property="id"></id>
         <result column="cityid" property="cityId"></result>
         <result column="city" property="city"></result>
-        <collection property="areas" ofType="entity.Area">
+        <collection property="areas" ofType="cn.jd.entity.Area">
             <id column="a_id" property="id"></id>
             <result column="areaid" property="areaId"></result>
             <result column="area" property="area"></result>
         </collection>
     </resultMap>
 
-    <select id="getAllCity" resultType="entity.City">
+    <select id="getAllCity" resultType="cn.jd.entity.City">
         select * from cities
     </select>
 
@@ -31,7 +31,7 @@
         select * from cities
     </select>
 
-    <select id="getCityByCid" resultType="entity.City" parameterType="int">
+    <select id="getCityByCid" resultType="cn.jd.entity.City" parameterType="int">
         select * from cities where cityid=#{id}
     </select>
 
@@ -39,7 +39,7 @@
         select t1.id as c_id,t2.id as a_id,t1.cityid as cityid,city,provinceid,areaid,area from cities t1 left join areas t2 on t1.cityid=t2.cityid where t1.id=#{id}
     </select>
 
-    <select id="getCityByProvinceId" parameterType="int" resultType="entity.City">
+    <select id="getCityByProvinceId" parameterType="int" resultType="cn.jd.entity.City">
          select * from cities where provinceid =#{provinceId}
     </select>
 

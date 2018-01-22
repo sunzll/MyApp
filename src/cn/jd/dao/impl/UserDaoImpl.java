@@ -1,7 +1,7 @@
 package cn.jd.dao.impl;
 
 import cn.jd.dao.UserDao;
-import entity.User;
+import cn.jd.entity.User;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
 

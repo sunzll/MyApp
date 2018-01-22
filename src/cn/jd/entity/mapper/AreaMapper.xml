@@ -7,11 +7,11 @@
 
 
     <!--查询所有的地区信息-->
-    <select id="getAllArea" resultType="entity.Area">
+    <select id="getAllArea" resultType="cn.jd.entity.Area">
         select * from areas
     </select>
 
-    <select id="getAreaByCityId" parameterType="int" resultType="entity.Area">
+    <select id="getAreaByCityId" parameterType="int" resultType="cn.jd.entity.Area">
         select * from areas where cityId=#{cityId}
     </select>
 

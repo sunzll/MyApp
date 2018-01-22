@@ -1,7 +1,7 @@
 package cn.jd.dao.impl;
 
 import cn.jd.dao.EmpDao;
-import entity.Emp;
+import cn.jd.entity.Emp;
 import cn.jd.util.Cond;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;

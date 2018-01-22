@@ -1,8 +1,8 @@
 package cn.jd.test;
 
-import entity.Area;
-import entity.City;
-import entity.Province;
+import cn.jd.entity.Area;
+import cn.jd.entity.City;
+import cn.jd.entity.Province;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

@@ -1,7 +1,7 @@
 package cn.jd.dao;
 
-import entity.Dept;
-import entity.Emp;
+import cn.jd.entity.Dept;
+import cn.jd.entity.Emp;
 import cn.jd.util.Cond;
 
 import java.util.List;
