@@ -21,11 +21,11 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="cn/jd/service/entity/mapper/UserMapper.xml" />
-        <mapper resource="cn/jd/service/entity/mapper/ProvinceMapper.xml" />
-        <mapper resource="cn/jd/service/entity/mapper/CityMapper.xml" />
-        <mapper resource="cn/jd/service/entity/mapper/AreaMapper.xml" />
-        <mapper resource="cn/jd/service/entity/mapper/EmpMapper.xml" />
-        <mapper resource="cn/jd/service/entity/mapper/DeptMapper.xml" />
+        <mapper resource="cn/jd/entity/mapper/UserMapper.xml" />
+        <mapper resource="cn/jd/entity/mapper/ProvinceMapper.xml" />
+        <mapper resource="cn/jd/entity/mapper/CityMapper.xml" />
+        <mapper resource="cn/jd/entity/mapper/AreaMapper.xml" />
+        <mapper resource="cn/jd/entity/mapper/EmpMapper.xml" />
+        <mapper resource="cn/jd/entity/mapper/DeptMapper.xml" />
     </mappers>
 </configuration>
